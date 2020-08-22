@@ -20,7 +20,6 @@ export const sendingMessage = (message) => {
     }
 };
 
-
 export function editMessage(id, messages) {
     return {
         type: EDIT_MESSAGE,
