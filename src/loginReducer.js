@@ -1,6 +1,7 @@
 import {
     GETTING_LOGIN_PASSWORD,
-VALID_PASSWORD,VALID_LOGIN,
+    VALID_PASSWORD,
+    VALID_LOGIN,
 } from './consts';
 
 const initialState = {
@@ -10,14 +11,10 @@ const initialState = {
 };
 
 const loginPasswordChecking = (a,b) => {
-    console.log(a,b,VALID_LOGIN,VALID_PASSWORD);
-    return (a === VALID_LOGIN && b === VALID_PASSWORD)
+       return (a === VALID_LOGIN && b === VALID_PASSWORD);
 };
 
 export const loginReducer = (state = initialState, action) => {
-
-    console.log("state reducer : " , state, action.login, action.password);
-
     switch (action.type) {
         case GETTING_LOGIN_PASSWORD:
             return {

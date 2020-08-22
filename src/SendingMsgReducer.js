@@ -1,4 +1,8 @@
-import {SENDING_MSG, EDIT_MESSAGE, DELETE_MESSAGE} from "./consts";
+import {
+    SENDING_MSG,
+    EDIT_MESSAGE,
+    DELETE_MESSAGE
+} from "./consts";
 
 const initialState = {
     messages: []
@@ -6,21 +10,16 @@ const initialState = {
 
 export const sendingMsgReducer = (state = initialState, action) => {
 
+    console.log(action.id);
+
     switch (action.type) {
         case SENDING_MSG:
-
-            console.log(state.messages);
-
-            // let newMessages = state.messages.concat();
-
             return {
                 ...state,
                 messages: state.messages.concat({
                     text: action.payload,
                     id: Date.now(),
                 })
-
-
             };
         case EDIT_MESSAGE:
             return {
@@ -29,6 +28,8 @@ export const sendingMsgReducer = (state = initialState, action) => {
         case DELETE_MESSAGE:
             return {
                 ...state,
+                id: action.id,
+                messages: state.messages.filter( (item) => item.id !== action.id),
             };
         default:
             return state;

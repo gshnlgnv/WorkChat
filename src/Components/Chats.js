@@ -12,10 +12,7 @@ class Chats extends Component {
                         <b>Chats List:</b>
                     </div>
                     <div>
-                        <Link to={{
-                            pathname: "/workchat",
-                            state: {fromDashboard: true},
-                        }}>WorkChat</Link>
+                        <Link to={{ pathname: "/workchat", }}>WorkChat</Link>
                         <Link to="/floodchat">FloodChat</Link>
                     </div>
                     <Route path="/workchat" component={WorkChat}/>

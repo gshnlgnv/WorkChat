@@ -8,10 +8,6 @@ import {applyMiddleware, createStore, compose} from 'redux';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import thunk from "redux-thunk";
 import {rootReducer} from './rootReducer';
-import {BrowserRouter} from "react-router-dom";
-
-import Chats from '../src/Components/Chats';
-
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -21,15 +17,9 @@ const store = createStore(
 
 ReactDOM.render(
     <React.StrictMode>
-
-            <Provider store={store}>
-
-                <App/>
-
-                {/*<Chats />*/}
-
-            </Provider>
-
+        <Provider store={store}>
+            <App/>
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );

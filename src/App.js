@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button} from "react-bootstrap";
 import logo from './logo_workchat.png';
@@ -14,6 +14,7 @@ class App extends Component {
     loginRef = React.createRef();
 
     renderChats() {
+
         if (this.props.auth) {
             return <Chats/>;
         } else {
@@ -28,9 +29,7 @@ class App extends Component {
                         placeholder="Введите логин"
                         ref={this.loginRef}
                     />
-
                 </Form.Group>
-
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Пароль</Form.Label>
                     <Form.Control
@@ -39,29 +38,19 @@ class App extends Component {
                         ref={this.passwordRef}
                     />
                 </Form.Group>
-
                 <Button
                     variant="primary"
                     type="button"
                     onClick={() => {
-
-                        console.log(" login + pw : ", this.loginRef.current.value, this.passwordRef.current.value);
-
                         this.props.gettingLoginAndPassword(this.loginRef.current.value, this.passwordRef.current.value)
                     }}>
                     Войти
                 </Button>
-
-                <Form.Text className="text-muted">
-                    have a good day
-                </Form.Text>
-
             </Form>;
         }
     }
 
     render() {
-        console.log(this.props.auth);
         return (
             <div>
                 {this.renderChats()}
