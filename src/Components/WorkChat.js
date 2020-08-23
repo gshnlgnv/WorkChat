@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {sendingMessage, deleteMessage} from "../actions";
+import "../Styles/WorkChat.css";
 
 class WorkChat extends Component {
 
@@ -20,13 +21,13 @@ class WorkChat extends Component {
 
     render() {
         return (
-            <div>
+            <div className="wrapper">
                 This is the WorkChat Component <b>[ logged as {this.props.login} ]</b>
-                <div>
+                <div className="chatBox">
                     <ul>
                         {this.props.messages.map((item, i) => {
                             return <li key={i}> {this.props.login} says: {item.text}
-                                <b onClick={() => {
+                                <b className="deleteMsgPointer" onClick={() => {
                                     this.props.deleteMessage(item.id);
 
                                 }}> x</b></li>
@@ -35,6 +36,7 @@ class WorkChat extends Component {
                 </div>
                 <div>
                     <input
+                        className="userInput"
                         type="text"
                         ref={this.msgRef}
                         onKeyDown={this.handleKeyDown}

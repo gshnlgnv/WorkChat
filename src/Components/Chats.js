@@ -9,11 +9,8 @@ class Chats extends Component {
             <BrowserRouter>
                 <div>
                     <div>
-                        <b>Chats List:</b>
-                    </div>
-                    <div>
-                        <Link to={{ pathname: "/workchat", }}>WorkChat</Link>
-                        <Link to="/floodchat">FloodChat</Link>
+                        <Link to={{ pathname: "/workchat", }}>WorkChat</Link> /
+                        <Link to="/floodchat"> FloodChat</Link>
                     </div>
                     <Route path="/workchat" component={WorkChat}/>
                     <Route path="/floodchat" component={FloodChat}/>

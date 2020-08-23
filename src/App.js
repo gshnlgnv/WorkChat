@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button} from "react-bootstrap";
+import {Form, Button} from "react-bootstrap";
 import logo from './logo_workchat.png';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
@@ -44,6 +44,7 @@ class App extends Component {
                         Войти
                     </Button>
                 </div>
+
             </div>
 
 
